@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/',(req, res) => {
+app.all('/{*splat}', (req, res) => {
     res.status(200).send("Hello World!!");
 });
 

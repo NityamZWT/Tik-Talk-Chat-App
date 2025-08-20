@@ -1,10 +1,13 @@
-import Image from "next/image";
+// import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main>
-      <h1>Welcome to the Chat App</h1>
-      <p>This is a simple chat application built with Next.js and Socket.io.</p>
-    </main>
+    <>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <Button>Click Me</Button>
+    </div>
+    </>
   );
 }
