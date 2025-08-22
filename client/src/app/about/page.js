@@ -1,10 +1,9 @@
-'use client'
-import React from 'react'
+import { cookies } from "next/headers";
 
-function About() {
-  return (
-    <div>This is About Page</div>
-  )
+export default async function About() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("jwt_token");
+  console.log("Server Token:", token); // should log your JWT
+
+  return <div>About Page {token.value}</div>;
 }
-
-export default About;
