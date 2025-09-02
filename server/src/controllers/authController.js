@@ -1,13 +1,13 @@
 const User = require("../models/users");
-const { default: tokenGenerator } = require("../utils/tokenGenerator");
+const tokenGenerator  = require("../utils/tokenGenerator");
 
 const createUser = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, role, department, action } = req.body;
 
     const [user, created] = await User.findOrCreate({
       where: { email },
-      defaults: { username, password }
+      defaults: { username, password, role, department, action }
     });
 
     if (!created) {
@@ -17,12 +17,7 @@ const createUser = async (req, res) => {
 
     const token = tokenGenerator(user);
     console.log("Generated JWT:", token);
-    // res.cookie("jwt_token", token, {
-    // httpOnly: false,
-    // secure: false,
-    // sameSite: "none",
-    // maxAge: 24 * 60 * 60, // 1 day
-    // });
+
     res.status(201).json({ message: "User created successfully", user, token });
   } catch (error) {
     console.error("Error creating user:", error);

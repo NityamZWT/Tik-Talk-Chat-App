@@ -1,0 +1,2 @@
+p, admin, users, (read|write|delete), HR
+p, user, users, (read|write), IT
