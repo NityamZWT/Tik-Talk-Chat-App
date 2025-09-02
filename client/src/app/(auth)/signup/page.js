@@ -15,6 +15,9 @@ function Signup() {
                   <Input type={"email"} name={"email"} placeholder={"Enter your email"}/>
                   <Input type={"password"} name={"password"} placeholder={"Enter your password"}/>
                   <Input type={"password"} name={"confirmPassword"} placeholder={"Confirm your password"}/>
+                  <Input type={"text"} name={"role"} placeholder={"Enter your role (e.g., admin, user)"} className={'ring-0'}/>
+                  <Input type={"text"} name={"department"} placeholder={"Enter your department (e.g., HR, IT)"} className={'ring-0'}/>
+                  <Input type={"text"} name={"action"} placeholder={"Enter action (e.g., read, write, delete)"} className={'ring-0'}/>
                   <Button className={'rounded-xl py-6'}>Sign Up</Button>
               </form>
               <p className="text-gray-500 dark:text-gray-400">Do you already have an account? <a href="/login" className="text-blue-500 hover:underline">Log In</a></p>

@@ -8,9 +8,12 @@ export default async function About() {
 
   const response = await fetch("http://localhost:5000/api/auth/users", {
     cache: "no-store",
+    method: "POST",
     headers: {
+      "Content-Type": "application/json",
       Cookie: `jwt_token=${token?.value}` 
-    }
+    },
+    body: JSON.stringify({ action: "write", department: "IT" }),
   });
 
   if (!response.ok) {
